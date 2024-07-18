@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReferenceBackButtonAction : MonoBehaviour
+public class BackButtonAction : MonoBehaviour
 {
     [SerializeField] 
     private Button backButton;
@@ -9,9 +9,9 @@ public class ReferenceBackButtonAction : MonoBehaviour
     [Space(13)]
     
     [SerializeField] 
-    private GameObject referencePanel;
+    private GameObject closePanel;
     [SerializeField] 
-    private GameObject mainMenuPanel;
+    private GameObject openPanel;
 
     private void OnEnable()
     {
@@ -20,8 +20,8 @@ public class ReferenceBackButtonAction : MonoBehaviour
             backButton.onClick.RemoveAllListeners();
             backButton.onClick.AddListener(() =>
             {
-                referencePanel.SetActive(false);
-                mainMenuPanel.SetActive(true);
+                closePanel.SetActive(false);
+                openPanel.SetActive(true);
             });
         }
     }

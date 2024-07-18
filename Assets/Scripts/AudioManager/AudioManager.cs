@@ -33,11 +33,11 @@ public class AudioManager : MonoBehaviour
 
             if (s.name == "Theme")
             {
-                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME, 1f);
+                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME, 0f);
             }
             else
             {
-                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_VOLUME, 1f);
+                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_VOLUME, 0f);
             }
 
             s.source.loop = s.loop;
@@ -54,5 +54,55 @@ public class AudioManager : MonoBehaviour
         }
         
         s.source.Play();
+    }
+
+    public void SetSoundVolume(float volume)
+    {
+        PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_VOLUME, volume);
+        
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            if (s.name == "Theme")
+            {
+                continue;
+            }
+            else
+            {
+                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_VOLUME);
+            }
+
+            s.source.loop = s.loop;
+        }
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        PlayerPrefs.SetFloat(PLAYER_PREFS_MUSIC_VOLUME, volume);
+        
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            if (s.name == "Theme")
+            {
+                s.source.volume = s.volume = PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME);
+            }
+
+            s.source.loop = s.loop;
+        }
+    }
+
+    public float GetSoundVolume()
+    {
+        return PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_VOLUME);
+    }
+
+    public float GetMusicVolume()
+    {
+        return PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME);
     }
 }
