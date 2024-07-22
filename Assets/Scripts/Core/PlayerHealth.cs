@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Slider healthSlider;
 
+    private bool missActive;
+
     private int currentHealth;
 
     private void Awake()
@@ -29,13 +31,39 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
+        if (missActive)
         {
-            Debug.Log("You lose!");
+            int miss = Random.Range(0, 2);
+            
+            if (miss == 0 || miss == 2)
+            {
+                Debug.Log("Miss");
+            }
+            else
+            {
+                currentHealth -= damage;
+
+                if (currentHealth <= 0)
+                {
+                    Debug.Log("You lose!");
+                }
+            }
         }
-        
+        else
+        {
+            currentHealth -= damage;
+
+            if (currentHealth <= 0)
+            {
+                Debug.Log("You lose!");
+            }
+        }
+
         UpdateHealthBarValue(currentHealth);
+    }
+
+    public void SetMiss(bool miss)
+    {
+        missActive = miss;
     }
 }
