@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        unlockNewLevel = currentLevelIndex != 9;
+        unlockNewLevel = currentLevelIndex != 7;
         Debug.Log(unlockNewLevel);
     }
 
