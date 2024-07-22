@@ -43,8 +43,8 @@ public class SpawnPlayer : MonoBehaviour
                 player[i].SetActive(true);
                 playerMovement.SetPlayerSprite(player[i]);
                 playerAttack.SetPlayerGameObject(player[i]);
-                //playerAttack.SetPlayerAnimator(playerAnimator[i]);
-                //playerMovement.SetPlayerAnimator(playerAnimator[i]);
+                playerAttack.SetPlayerAnimator(playerAnimator[i]);
+                playerMovement.SetPlayerAnimator(playerAnimator[i]);
             }
             else
             {
