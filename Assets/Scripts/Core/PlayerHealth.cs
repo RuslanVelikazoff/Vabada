@@ -55,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                Destroy(this.gameObject);
                 GameManager.Instance.Lose();
             }
         }

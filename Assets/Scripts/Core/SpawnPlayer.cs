@@ -15,6 +15,8 @@ public class SpawnPlayer : MonoBehaviour
     [SerializeField] 
     private PlayerAttack playerAttack;
 
+    private int currentPlayerIndex;
+
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(.1f);
@@ -22,6 +24,7 @@ public class SpawnPlayer : MonoBehaviour
         SetPlayer();
         SetPlayerHealth();
         SetPlayerAttack();
+        SetPlayerJumpForce();
     }
 
     private void SetPlayer()
@@ -30,6 +33,13 @@ public class SpawnPlayer : MonoBehaviour
         {
             if (ShopData.Instance.IsBuyCosmetic(i))
             {
+                if (currentPlayerIndex != i)
+                {
+                    player[currentPlayerIndex].SetActive(false);
+                    currentPlayerIndex = i;
+                }
+
+                currentPlayerIndex = i;
                 player[i].SetActive(true);
                 playerMovement.SetPlayerSprite(player[i]);
                 playerAttack.SetPlayerGameObject(player[i]);
@@ -42,6 +52,7 @@ public class SpawnPlayer : MonoBehaviour
             }
         }
     }
+    
 
     private void SetPlayerHealth()
     {
@@ -68,5 +79,13 @@ public class SpawnPlayer : MonoBehaviour
         Debug.Log(attackDelay);
         
         playerAttack.SetPlayerAttackDelay(attackDelay);
+    }
+
+    private void SetPlayerJumpForce()
+    {
+        float jumpForce = 4.5f + (float)ShopData.Instance.GetImproveLevel(2) / 2;
+        Debug.Log(jumpForce);
+        
+        playerMovement.SetPlayerJumpForce(jumpForce);
     }
 }

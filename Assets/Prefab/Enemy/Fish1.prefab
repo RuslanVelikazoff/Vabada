@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2296351432183055135}
-  damage: 7
+  damage: 4
 --- !u!1 &3165173360132130772
 GameObject:
   m_ObjectHideFlags: 0

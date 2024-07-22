@@ -124,4 +124,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerGameObject = player;
     }
+
+    public void SetPlayerJumpForce(float jumpForce)
+    {
+        this.jumpForce = jumpForce;
+    }
 }
