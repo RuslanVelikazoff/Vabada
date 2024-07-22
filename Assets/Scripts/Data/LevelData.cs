@@ -92,6 +92,11 @@ public class LevelData : MonoBehaviour
         return _openLocation[index];
     }
 
+    public void UnlockLocation(int index)
+    {
+        _openLocation[index] = true;
+    }
+
     #endregion
 
     #region Forest
@@ -99,6 +104,11 @@ public class LevelData : MonoBehaviour
     public bool IsOpenForestLevel(int index)
     {
         return _openForestLevel[index];
+    }
+
+    public void UnlockForestLevel(int index)
+    {
+        _openForestLevel[index] = true;
     }
 
     #endregion
@@ -110,6 +120,11 @@ public class LevelData : MonoBehaviour
         return _openCastleLevel[index];
     }
 
+    public void UnlockCastleLevel(int index)
+    {
+        _openCastleLevel[index] = true;
+    }
+
     #endregion
 
     #region Desert
@@ -119,6 +134,11 @@ public class LevelData : MonoBehaviour
         return _openDesertLevel[index];
     }
 
+    public void UnlockDesertLevel(int index)
+    {
+        _openDesertLevel[index] = true;
+    }
+
     #endregion
 
     #region Subsea
@@ -126,6 +146,11 @@ public class LevelData : MonoBehaviour
     public bool IsOpenSubseaLevel(int index)
     {
         return _openSubseaLevel[index];
+    }
+
+    public void UnlockSubseaLevel(int index)
+    {
+        _openSubseaLevel[index] = true;
     }
 
     #endregion

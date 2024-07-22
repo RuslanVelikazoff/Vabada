@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
 
                 if (currentHealth <= 0)
                 {
-                    Debug.Log("You lose!");
+                    GameManager.Instance.Lose();
                 }
             }
         }
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                Debug.Log("You lose!");
+                GameManager.Instance.Lose();
             }
         }
 
