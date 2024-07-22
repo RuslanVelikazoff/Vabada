@@ -14,8 +14,10 @@ public class GameData
 
     public GameData()
     {
-        coin = 0;
+        coin = 909999;
 
+        buyCosmetic[0] = true;
+        
         improveLevel[0] = 1;
         improveLevel[1] = 1;
         improveLevel[2] = 1;
