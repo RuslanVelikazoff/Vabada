@@ -4,12 +4,12 @@ public class LevelData : MonoBehaviour
 {
     public static LevelData Instance;
     
-    public bool[] _openLocation;
+    private bool[] _openLocation;
 
-    public bool[] _openForestLevel;
-    public bool[] _openCastleLevel;
-    public bool[] _openDesertLevel;
-    public bool[] _openSubseaLevel;
+    private bool[] _openForestLevel;
+    private bool[] _openCastleLevel;
+    private bool[] _openDesertLevel;
+    private bool[] _openSubseaLevel;
     
     private const string SaveKey = "MainSaveLevel";
 

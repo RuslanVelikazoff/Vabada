@@ -12244,7 +12244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8446ceba6072846aa256bd8f963d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coin: 0
 --- !u!1 &956965365
 GameObject:
   m_ObjectHideFlags: 0
@@ -16200,13 +16199,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 94d276282df427c418026a3ab9963ed8, type: 3}
     loop: 1
     volume: 0
     pitch: 0
     source: {fileID: 0}
-  - name: Death
-    clip: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: d63c022b24c637b45ac15495ecbe16ab, type: 3}
+    loop: 0
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 501936bb89dbe654a9533d690cdb36ca, type: 3}
     loop: 0
     volume: 0
     pitch: 0
@@ -23064,11 +23069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d6fcc0f2455c4c8982c6f272d3f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openLocation: 
-  _openForestLevel: 
-  _openCastleLevel: 
-  _openDesertLevel: 
-  _openSubseaLevel: 
 --- !u!4 &1881694110
 Transform:
   m_ObjectHideFlags: 0
@@ -25396,6 +25396,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975d6bf168b5d2347b42dd5102b04ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _improveLevel: 
-  _buyAbilities: 
-  _buyCosmetic: 

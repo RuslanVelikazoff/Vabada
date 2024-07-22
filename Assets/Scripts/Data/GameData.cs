@@ -14,7 +14,7 @@ public class GameData
 
     public GameData()
     {
-        coin = 909999;
+        coin = 0;
 
         buyCosmetic[0] = true;
         
@@ -36,7 +36,7 @@ public class GameData
         openForestLevel[6] = false;
         openForestLevel[7] = false;
 
-        openCastleLevel[0] = false;
+        openCastleLevel[0] = true;
         openCastleLevel[1] = false;
         openCastleLevel[2] = false;
         openCastleLevel[3] = false;
@@ -45,7 +45,7 @@ public class GameData
         openCastleLevel[6] = false;
         openCastleLevel[7] = false;
 
-        openDesertLevel[0] = false;
+        openDesertLevel[0] = true;
         openDesertLevel[1] = false;
         openDesertLevel[2] = false;
         openDesertLevel[3] = false;
@@ -54,7 +54,7 @@ public class GameData
         openDesertLevel[6] = false;
         openDesertLevel[7] = false;
 
-        openSubseaLevel[0] = false;
+        openSubseaLevel[0] = true;
         openSubseaLevel[1] = false;
         openSubseaLevel[2] = false;
         openSubseaLevel[3] = false;

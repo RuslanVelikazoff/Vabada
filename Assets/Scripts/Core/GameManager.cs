@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        AudioManager.Instance.Play("Win");
         winPanel.OpenPanel();
         CoinData.Instance.AddCoin(CoinManager.Instance.GetCoinAmount());
 
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
+        AudioManager.Instance.Play("Lose");
         losePanel.OpenPanel();
         CoinData.Instance.AddCoin(CoinManager.Instance.GetCoinAmount());
     }

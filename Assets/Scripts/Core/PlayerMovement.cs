@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -128,5 +129,13 @@ public class PlayerMovement : MonoBehaviour
     public void SetPlayerJumpForce(float jumpForce)
     {
         this.jumpForce = jumpForce;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("DeathPlatform"))
+        {
+            GameManager.Instance.Lose();
+        }
     }
 }

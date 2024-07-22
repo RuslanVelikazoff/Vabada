@@ -1,13 +1,12 @@
-using System;
 using UnityEngine;
 
 public class ShopData : MonoBehaviour
 {
     public static ShopData Instance;
 
-    public int[] _improveLevel;
-    public bool[] _buyAbilities;
-    public bool[] _buyCosmetic;
+    private int[] _improveLevel;
+    private bool[] _buyAbilities;
+    private bool[] _buyCosmetic;
 
     private const string SaveKey = "MainSaveShop";
 

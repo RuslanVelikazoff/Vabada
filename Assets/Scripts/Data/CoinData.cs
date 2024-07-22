@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 public class CoinData : MonoBehaviour
 {
     public static CoinData Instance;
 
-    public int _coin;
+    private int _coin;
 
     private const string SaveKey = "MainSaveCoin";
 
