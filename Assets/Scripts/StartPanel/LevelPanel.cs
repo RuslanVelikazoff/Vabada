@@ -29,10 +29,10 @@ public class LevelPanel : MonoBehaviour
         levelUnlock = new bool[levelButton.Length];
         SetLevelUnlock();
         SetButtonSprite();
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (levelButton[0] != null)
         {

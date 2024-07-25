@@ -34,7 +34,7 @@ public class CosmeticPanel : MonoBehaviour
     {
         currentCoinAmount = CoinData.Instance.GetCoinAmount();
         
-        ButtonClickAction();
+        ButtonFunctions();
         SetActiveButton();
     }
 
@@ -68,7 +68,7 @@ public class CosmeticPanel : MonoBehaviour
         }
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (newAbilitiesButton != null)
         {

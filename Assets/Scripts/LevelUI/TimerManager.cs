@@ -25,10 +25,10 @@ public class TimerManager : MonoBehaviour
             minute++;
         }
 
-        timerText.text = GetTimerText();
+        timerText.text = GetTimerString();
     }
 
-    public string GetTimerText()
+    public string GetTimerString()
     {
         string minuteText = "";
         string secondsText = "";

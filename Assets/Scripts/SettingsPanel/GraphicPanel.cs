@@ -80,10 +80,10 @@ public class GraphicPanel : MonoBehaviour
         
         SetGraphicButton();
         SetResolutionButton();
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (soundButton != null)
         {

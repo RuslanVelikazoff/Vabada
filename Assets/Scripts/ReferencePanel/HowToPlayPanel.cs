@@ -17,10 +17,10 @@ public class HowToPlayPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (goalsAndObjectivesButton != null)
         {

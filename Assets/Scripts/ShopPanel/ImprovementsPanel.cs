@@ -29,10 +29,10 @@ public class ImprovementsPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (abilitiesButton != null)
         {

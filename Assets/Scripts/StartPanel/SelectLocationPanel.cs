@@ -21,7 +21,7 @@ public class SelectLocationPanel : MonoBehaviour
     private void OnEnable()
     {
         SetButtonSprite();
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
     private void SetButtonSprite()
@@ -39,7 +39,7 @@ public class SelectLocationPanel : MonoBehaviour
         }
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (locationButton[0] != null)
         {

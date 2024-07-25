@@ -27,10 +27,10 @@ public class MainPanel : MonoBehaviour
 
     private void Awake()
     {
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (playButton != null)
         {

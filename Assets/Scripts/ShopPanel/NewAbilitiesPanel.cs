@@ -33,11 +33,11 @@ public class NewAbilitiesPanel : MonoBehaviour
     private void OnEnable()
     {
         currentCoinAmount = CoinData.Instance.GetCoinAmount();
-        ButtonClickAction();
+        ButtonFunctions();
         SetActiveButtons();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (pigImprovementsButton != null)
         {

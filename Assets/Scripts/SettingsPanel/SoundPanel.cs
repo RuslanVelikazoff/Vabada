@@ -38,7 +38,7 @@ public class SoundPanel : MonoBehaviour
         musicSlider.value = musicVolume;
         soundSlider.value = soundVolume;
         
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
     private void Update()
@@ -56,7 +56,7 @@ public class SoundPanel : MonoBehaviour
         }
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (graphicButton != null)
         {

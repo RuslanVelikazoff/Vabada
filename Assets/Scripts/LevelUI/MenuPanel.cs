@@ -12,11 +12,11 @@ public class MenuPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        ButtonClickAction();
+        ButtonFunctions();
         Time.timeScale = 0f;
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (continueButton != null)
         {

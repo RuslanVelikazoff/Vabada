@@ -17,10 +17,10 @@ public class FAQPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (howToPlayButton != null)
         {

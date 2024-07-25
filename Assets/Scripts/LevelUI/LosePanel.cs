@@ -21,12 +21,12 @@ public class LosePanel : MonoBehaviour
         Time.timeScale = 0f;
         this.gameObject.SetActive(true);
         coinText.text = CoinManager.Instance.GetCoinAmount().ToString();
-        timeText.text = TimerManager.Instance.GetTimerText();
+        timeText.text = TimerManager.Instance.GetTimerString();
         
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (restartButton != null)
         {

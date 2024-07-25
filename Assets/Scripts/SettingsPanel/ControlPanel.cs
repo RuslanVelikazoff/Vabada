@@ -63,7 +63,7 @@ public class ControlPanel : MonoBehaviour
 
         sensitivitySlider.value = PlayerPrefs.GetFloat(PLAYER_PREFS_SENSITIVITY);
         SetControlButton();
-        ButtonClickAction();
+        ButtonFunctions();
     }
 
     private void OnDisable()
@@ -72,7 +72,7 @@ public class ControlPanel : MonoBehaviour
         PlayerPrefs.SetFloat(PLAYER_PREFS_SENSITIVITY, sensitivity);
     }
 
-    private void ButtonClickAction()
+    private void ButtonFunctions()
     {
         if (soundButton != null)
         {
