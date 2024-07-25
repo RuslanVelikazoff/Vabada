@@ -24,9 +24,7 @@ public class Enemy : MonoBehaviour
         {
             isAttack = false;
         }
-        
-        Debug.Log(isAttack);
-        
+
         animator.SetBool("isAttack", isAttack);
     }
 

@@ -4,39 +4,39 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] 
-    private float attackDelay;
+    private float attackCooldown;
 
-    private bool isAttack = false;
+    private bool attacking = false;
 
-    private GameObject player;
-    private Animator playerAnimator;
+    private GameObject character;
+    private Animator characterAnimator;
 
     private void Update()
     {
-        if (playerAnimator != null)
+        if (characterAnimator != null)
         {
-            playerAnimator.SetBool("isAttack", isAttack);
+            characterAnimator.SetBool("isAttack", attacking);
         }
     }
 
     public void SetPlayerAnimator(Animator animator)
     {
-        playerAnimator = animator;
+        characterAnimator = animator;
     }
 
     public void SetPlayerGameObject(GameObject player)
     {
-        this.player = player;
+        this.character = player;
     }
 
     public void SetPlayerAttackDelay(float delay)
     {
-        attackDelay = delay;
+        attackCooldown = delay;
     }
 
     public void Attack()
     {
-        if (!isAttack)
+        if (!attacking)
         {
             StartCoroutine(AttackCO());
             
@@ -51,10 +51,10 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator AttackCO()
     {
-        isAttack = true;
+        attacking = true;
 
-        yield return new WaitForSeconds(attackDelay);
+        yield return new WaitForSeconds(attackCooldown);
 
-        isAttack = false;
+        attacking = false;
     }
 }

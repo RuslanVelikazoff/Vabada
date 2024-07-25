@@ -5929,9 +5929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c66ef254e52674459d2c3002b6df25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 1561938034}
-  normalSpeed: 3.4
-  jumpForce: 0
+  rb2D: {fileID: 1561938034}
+  defaultSpeed: 0
+  leapForce: 6.5
 --- !u!114 &1561938037
 MonoBehaviour:
   m_ObjectHideFlags: 0

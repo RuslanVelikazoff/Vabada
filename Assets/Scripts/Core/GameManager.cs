@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         unlockNewLevel = currentLevelIndex != 7;
-        Debug.Log(unlockNewLevel);
     }
 
     public void Win()

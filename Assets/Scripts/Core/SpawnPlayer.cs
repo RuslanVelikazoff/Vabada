@@ -75,17 +75,14 @@ public class SpawnPlayer : MonoBehaviour
         }
 
         attackDelay -= (float)ShopData.Instance.GetImproveLevel(1) / 10;
-        
-        Debug.Log(attackDelay);
-        
+
         playerAttack.SetPlayerAttackDelay(attackDelay);
     }
 
     private void SetPlayerJumpForce()
     {
         float jumpForce = 4.5f + (float)ShopData.Instance.GetImproveLevel(2) / 2;
-        Debug.Log(jumpForce);
-        
+
         playerMovement.SetPlayerJumpForce(jumpForce);
     }
 }

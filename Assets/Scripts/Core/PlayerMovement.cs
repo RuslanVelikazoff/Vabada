@@ -4,131 +4,130 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb2D;
 
     [SerializeField] 
-    private float normalSpeed;
+    private float defaultSpeed = 3.5f;
     [SerializeField] 
-    private float jumpForce = 6.5f;
+    private float leapForce = 6.5f;
 
-    private float speed;
+    private float currentSpeed;
 
-    private Vector2 moveDirection;
+    private bool isRunning;
+    private bool isLeaping;
+    private bool onGround;
 
-    private bool isWalk;
-    private bool isJump;
-    private bool isGround;
-
-    private GameObject playerGameObject;
-    private Animator playerAnimator;
+    private GameObject characterGameObject;
+    private Animator characterAnimator;
 
     private void Start()
     {
-        speed = 0f;
+        currentSpeed = 0f;
+        defaultSpeed = 3.5f;
     }
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(rigidbody.position, Vector2.down, 1f, 
+        RaycastHit2D groundHit = Physics2D.Raycast(rb2D.position, Vector2.down, 1f, 
             LayerMask.GetMask("Platform"));
 
-        if (hit.collider != null)
+        if (groundHit.collider != null)
         {
-            isGround = true;
-            isJump = false;
+            onGround = true;
+            isLeaping = false;
         }
         else
         {
-            isGround = false;
-            isJump = true;
+            onGround = false;
+            isLeaping = true;
         }
 
-        if (playerAnimator != null)
+        if (characterAnimator != null)
         {
-            playerAnimator.SetBool("isJump", isJump);
+            characterAnimator.SetBool("isJump", isLeaping);
         }
     }
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
+        rb2D.velocity = new Vector2(currentSpeed, rb2D.velocity.y);
     }
 
     public void MovePlayerRight()
     {
-        playerGameObject.transform.rotation = new Quaternion(
-            playerGameObject.transform.rotation.x,
+        characterGameObject.transform.rotation = new Quaternion(
+            characterGameObject.transform.rotation.x,
             0,
-            playerGameObject.transform.rotation.z,
+            characterGameObject.transform.rotation.z,
             0);
 
-        isWalk = true;
+        isRunning = true;
         
-        if (playerAnimator != null)
+        if (characterAnimator != null)
         {
-            playerAnimator.SetBool("isWalk", isWalk);
+            characterAnimator.SetBool("isWalk", isRunning);
         }
 
-        if (speed <= 0f)
+        if (currentSpeed <= 0f)
         {
-            speed = normalSpeed;
+            currentSpeed = defaultSpeed;
         }
     }
 
     public void MovePlayerLeft()
     {
-        playerGameObject.transform.rotation = new Quaternion(
-            playerGameObject.transform.rotation.x,
+        characterGameObject.transform.rotation = new Quaternion(
+            characterGameObject.transform.rotation.x,
             180,
-            playerGameObject.transform.rotation.z,
+            characterGameObject.transform.rotation.z,
             0);
 
-        isWalk = true;
+        isRunning = true;
 
-        if (playerAnimator != null)
+        if (characterAnimator != null)
         {
-            playerAnimator.SetBool("isWalk", isWalk);
+            characterAnimator.SetBool("isWalk", isRunning);
         }
 
-        if (speed >= 0f)
+        if (currentSpeed >= 0f)
         {
-            speed = -normalSpeed;
+            currentSpeed = -defaultSpeed;
         }
     }
 
     public void ResetMove()
     {
-        isWalk = false;
+        isRunning = false;
 
-        if (playerAnimator != null)
+        if (characterAnimator != null)
         {
-            playerAnimator.SetBool("isWalk", isWalk);
+            characterAnimator.SetBool("isWalk", isRunning);
         }
 
-        speed = 0f;
+        currentSpeed = 0f;
     }
 
     public void JumpPlayer()
     {
-        if (isGround)
+        if (onGround)
         {
-            rigidbody.velocity = Vector2.up * jumpForce;
+            rb2D.velocity = Vector2.up * leapForce;
         }
     }
 
     public void SetPlayerAnimator(Animator animator)
     {
-        playerAnimator = animator;
+        characterAnimator = animator;
     }
 
     public void SetPlayerSprite(GameObject player)
     {
-        playerGameObject = player;
+        characterGameObject = player;
     }
 
     public void SetPlayerJumpForce(float jumpForce)
     {
-        this.jumpForce = jumpForce;
+        leapForce = jumpForce;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
